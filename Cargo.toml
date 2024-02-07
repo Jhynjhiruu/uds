@@ -1,0 +1,17 @@
+[package]
+name = "uds"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.79"
+bitflags = "2.4.2"
+ctru-rs = { git = "https://github.com/rust3ds/ctru-rs" }
+ctru-sys = { git = "https://github.com/rust3ds/ctru-rs" }
+macaddr = "1.0.1"
+thiserror = "1.0.56"
+
+[package.metadata.cargo-3ds]
+romfs_dir = "romfs"
