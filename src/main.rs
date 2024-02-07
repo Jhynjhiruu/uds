@@ -196,11 +196,12 @@ impl Uds {
         network: &NetworkScanInfo,
         max_size: Option<usize>,
     ) -> ctru::Result<Vec<u8>> {
-        // field in struct
-        const MAX_APPDATA_SIZE: usize = 200;
-
-        let mut appdata_buffer =
-            vec![0u8; max_size.unwrap_or(MAX_APPDATA_SIZE).min(MAX_APPDATA_SIZE)];
+        let mut appdata_buffer = vec![
+            0u8;
+            max_size
+                .unwrap_or(Self::MAX_APPDATA_SIZE)
+                .min(Self::MAX_APPDATA_SIZE)
+        ];
 
         let mut actual_size = MaybeUninit::uninit();
 
